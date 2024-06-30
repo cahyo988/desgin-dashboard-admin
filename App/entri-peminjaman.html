@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMAN1 Singgahan Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Css/style.css">
+</head>
+<body>
+   <!-- Sidebar -->
+   <div class="sidebar">
+    <div class="logo">
+        <img src="../Assets/smasing.png" alt="SMAN1 Singgahan" width="100">
+        <h5>SMAN1 Singgahan</h5>
+    </div>
+    <ul class="nav flex-column">
+        <li class="nav-item"><a href="dashboard.html#" class="nav-link active"><i class="bi bi-grid"></i>
+                Dashboard</a></li>
+        <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-plus-circle"></i> Tambahkan Koleksi</a>
+        </li>
+        <li class="nav-item"><a href="daftar-koleksi.html#" class="nav-link"><i class="bi bi-list"></i> Daftar
+                Koleksi (OPAC)</a></li>
+        <li class="nav-item"><a href="entri-peminjaman.html#" class="nav-link"><i class="bi bi-arrow-right-circle"></i> Entri
+                Peminjaman</a></li>
+        <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-arrow-left-circle"></i> Entri
+                Pengembalian</a></li>
+        <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-clock-history"></i> History Peminjaman</a>
+        </li>
+        <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-file-earmark-text"></i> Usulan Koleksi</a>
+        </li>
+        <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-journal"></i> Buku Tamu</a></li>
+        <li class="nav-item"><a href="keanggotaan.html#" class="nav-link"><i class="bi bi-people"></i> Keanggotaan</a></li>
+        <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+    </ul>
+</div>
+<!-- Sidebar End -->
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <span class="navbar-text text-white">Dashboard</span>
+        <div class="ms-auto flex-row">
+            <img src="../Assets/profile.png" alt="Profile" class="rounded-circle" width="32" height="32">
+            <span class="text-white ms-2">Nurul Hidayah</span>
+            <span class="badge bg-light text-dark ms-1">1304200178</span>
+            <i class="bi bi-chevron-down text-white ms-1"></i>
+        </div>
+    </div>
+</nav>
+<!--Navbar End -->
+
+    <div class="main-content">
+        <div class="d-flex gap-2 align-items-center mb-4">
+            <div class="search-bar">
+                <input type="text" class="form-control" placeholder="Cari judul buku">
+            </div>
+            <button class="btn btn-primary">Search</button>
+        </div>
+
+        <div class="book-card">
+            <div class="d-flex">
+                <img src="path_to_book_cover1.jpg" alt="Book Cover" class="book-cover">
+                <div class="book-info">
+                    <h5>Judul: Pemrograman</h5>
+                    <p>Pengarang: Tere Liye</p>
+                    <p>Peminjam: Nurul Hidayah</p>
+                    <p>Tgl Pinjam: Sabtu, 20 Mei 2024</p>
+                    <p>Jatuh tempo: Kamis, 2 Juni 2024</p>
+                </div>
+            </div>
+            <div class="d-flex justify-content-end mt-2">
+                <button class="btn btn-kembalikan me-2">Buat History</button>
+                <button class="btn btn-primary">Detail</button>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <div class="d-flex">
+                <img src="path_to_book_cover2.jpg" alt="Book Cover" class="book-cover">
+                <div class="book-info">
+                    <h5>Judul: Bintang</h5>
+                    <p>Pengarang: Andara Fiora</p>
+                    <p>Peminjam: Nur Hasanah</p>
+                    <p>Tgl Pinjam: Senin, 25 Maret 2024</p>
+                    <p>Jatuh tempo: Senin, 27 Maret 2024</p>
+                </div>
+            </div>
+            <div class="d-flex justify-content-end mt-2">
+                <button class="btn btn-dipinjam me-2">Dipinjam</button>
+                <button class="btn btn-primary">Detail</button>
+            </div>
+        </div>
+
+        <!-- Add more book cards as needed -->
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

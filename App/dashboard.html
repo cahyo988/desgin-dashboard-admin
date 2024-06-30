@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMAN1 Singgahan Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../Css/style.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <img src="../Assets/smasing.png" alt="SMAN1 Singgahan" width="100">
+            <h5>SMAN1 Singgahan</h5>
+        </div>
+        <ul class="nav flex-column">
+            <li class="nav-item"><a href="dashboard.html#" class="nav-link active"><i class="bi bi-grid"></i>
+                    Dashboard</a></li>
+            <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-plus-circle"></i> Tambahkan Koleksi</a>
+            </li>
+            <li class="nav-item"><a href="daftar-koleksi.html#" class="nav-link"><i class="bi bi-list"></i> Daftar
+                    Koleksi (OPAC)</a></li>
+            <li class="nav-item"><a href="entri-peminjaman.html#" class="nav-link"><i class="bi bi-arrow-right-circle"></i> Entri
+                    Peminjaman</a></li>
+            <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-arrow-left-circle"></i> Entri
+                    Pengembalian</a></li>
+            <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-clock-history"></i> History Peminjaman</a>
+            </li>
+            <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-file-earmark-text"></i> Usulan Koleksi</a>
+            </li>
+            <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-journal"></i> Buku Tamu</a></li>
+            <li class="nav-item"><a href="keanggotaan.html#" class="nav-link"><i class="bi bi-people"></i> Keanggotaan</a></li>
+            <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+        </ul>
+    </div>
+    <!-- Sidebar End -->
+
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <span class="navbar-text text-white">Dashboard</span>
+            <div class="ms-auto flex-row">
+                <img src="../Assets/profile.png" alt="Profile" class="rounded-circle" width="32" height="32">
+                <span class="text-white ms-2">Nurul Hidayah</span>
+                <span class="badge bg-light text-dark ms-1">1304200178</span>
+                <i class="bi bi-chevron-down text-white ms-1"></i>
+            </div>
+        </div>
+    </nav>
+    <!--Navbar End -->
+
+    <div class="main-content">
+        <h2 class="mb-4">Semua koleksi</h2>
+        <div class="row mb-4 ">
+            <div class="col-md-4">
+                <div class="card stat-card">
+                    <div class="stat-icon text-danger"><i class="bi bi-book"></i></div>
+                    <div class="stat-info">
+                        <h3 class="text-danger text-center">912</h3>
+                        <p>Jumlah Buku</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card stat-card">
+                    <div class="stat-icon text-primary"><i class="bi bi-people"></i></div>
+                    <div class="stat-info">
+                        <h3 class="text-primary text-center">726</h3>
+                        <p>Jumlah Anggota</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card stat-card">
+                    <div class="stat-icon text-warning"><i class="bi bi-journals"></i></div>
+                    <div class="stat-info">
+                        <h3 class="text-warning">1316</h3>
+                        <p>Eksemplar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">History Kunjungan</h5>
+                <canvas id="visitChart"></canvas>
+            </div>
+        </div>
+
+        <h2 class="mb-4">Koleksi sedang dipinjam</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card stat-card">
+                    <div class="stat-icon text-danger"><i class="bi bi-book"></i></div>
+                    <div class="stat-info">
+                        <h3 class="text-danger text-center">26</h3>
+                        <p>Jumlah Buku</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card stat-card">
+                    <div class="stat-icon text-primary"><i class="bi bi-people"></i></div>
+                    <div class="stat-info">
+                        <h3 class="text-primary text-center">24</h3>
+                        <p>Jumlah Anggota</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card stat-card">
+                    <div class="stat-icon text-warning"><i class="bi bi-journals"></i></div>
+                    <div class="stat-info">
+                        <h3 class="text-warning text-center">314</h3>
+                        <p>Eksemplar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const ctx = document.getElementById('visitChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Jumlah Kunjungan',
+                    data: [50, 90, 70, 85, 80, 70, 85, 90, 100, 85, 75, 90],
+                    backgroundColor: '#13293d',
+                    borderColor: '#13293d',
+                    borderWidth: 1
+                }]
+            },
+        });
+    </script>
+</body>
+</html>
